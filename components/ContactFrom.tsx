@@ -5,7 +5,7 @@ import {
   selectShowComponent,
 } from "../app/features/displaySlice";
 import { useAppSelector } from "../app/store";
-import socialMedia from "./services/utils/socialMedia";
+import socialMedia from "../data/socialMedia";
 
 const ContactFrom = () => {
   const path = useAppSelector(selectPath);
@@ -16,9 +16,9 @@ const ContactFrom = () => {
     <div
       className={`${
         path == PathLine.laptop && compStatus ? "opacity-1" : "opacity-0"
-      } absolute transition-all delay-[2s] top-[14%] left-[19.5%] w-[62%] h-[72%] `}
+      } absolute transition-all delay-[2s] top-[13.5%] left-[19.3%] w-[62%] h-[71%] `}
     >
-      <div className="flex flex-wrap overflow-y-auto h-full">
+      <div className="flex flex-wrap overflow-y-auto h-full mx-1 lg:mx-0 scrollbar-desc">
         <div className="form-wrapper">
           <form className="w-[100%] space-y-3 h-fit ">
             <h3 className="form-title">Let's Discuss Your Project</h3>
@@ -44,7 +44,7 @@ const ContactFrom = () => {
           </form>
         </div>
 
-        <div className="w-full h-fit lg:w-[35%] flex flex-col gap-1 ">
+        <div className="w-full h-fit lg:w-[38%] flex flex-col gap-1 ">
           <h2 className="form-title">Find Me Here</h2>
           <div className="relative flex justify-around mb-3 lg:flex-col gap-5 ml-3">
             {socialMedia.map((link) => (

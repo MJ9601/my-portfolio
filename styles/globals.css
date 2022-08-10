@@ -103,11 +103,11 @@ canvas {
     py-1 px-4 lg:pb-4 mt-3;
   }
   .form-wrapper {
-    @apply lg:w-[65%]  w-full   h-fit before:absolute lg:before:h-[90%] before:bg-gray-400  lg:before:w-1 relative lg:before:right-0 before:w-[70%] before:h-1 before:-bottom-5 before:mx-auto;
+    @apply lg:w-[62%]  w-full  h-fit before:hidden lg:before:block before:absolute lg:before:h-[90%] before:bg-gray-400  lg:before:w-1 relative lg:before:right-0 before:w-[70%] before:h-1 before:-bottom-5 before:mx-auto;
   }
 
   .icons {
-    @apply w-8 group-hover:text-green-600 transition-all ease-linear;
+    @apply w-8 group-hover:bg-green-500 transition-all ease-linear rounded-md p-1;
   }
   .icons-text {
     @apply text-base group-hover:text-green-600 transition-all ease-linear hidden lg:block;

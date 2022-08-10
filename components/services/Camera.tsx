@@ -14,7 +14,7 @@ import {
   setShowCompTrueAsync,
 } from "../../app/features/displaySlice";
 import { useAppDispatch, useAppSelector } from "../../app/store";
-import { Curves, curves, paths } from "./utils/paths";
+import { Curves, curves, paths } from "../../data/paths";
 
 const Camera = () => {
   const presCamRef = useRef<THREE.PerspectiveCamera>();

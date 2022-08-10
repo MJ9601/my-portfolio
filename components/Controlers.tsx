@@ -5,12 +5,14 @@ import {
   deactivateShowComp,
   PathLine,
   selectOrthCam,
+  setMeInfo,
   setPath,
   setShowCompTrueAsync,
 } from "../app/features/displaySlice";
 import { setAllProject } from "../app/features/projectSlice";
 import { useAppDispatch, useAppSelector } from "../app/store";
-import db from "./services/utils/db.text";
+import db from "../data/db.text";
+import me from "../data/about";
 
 const Controlers = () => {
   const dispatch = useAppDispatch();
@@ -27,6 +29,7 @@ const Controlers = () => {
               onClick={() => {
                 dispatch(setPath(PathLine.monitors));
                 dispatch(activateOrthCam());
+                dispatch(setMeInfo(me));
                 dispatch(setShowCompTrueAsync(true));
               }}
             >

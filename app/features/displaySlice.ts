@@ -1,6 +1,7 @@
 import { RootState } from "../store";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchStatus } from "./showComponentAPI";
+import { Me } from "../../data/about";
 
 export enum PathLine {
   phone = "phone",
@@ -14,12 +15,14 @@ type InitState = {
   path?: PathLine;
   orthCamStatus: boolean;
   showComponents: boolean;
+  me?: Me | null;
 };
 
 const initialState: InitState = {
   path: undefined,
   orthCamStatus: false,
   showComponents: false,
+  me: null,
 };
 
 export const setShowCompTrueAsync = createAsyncThunk(
@@ -47,6 +50,9 @@ export const displaySlice = createSlice({
     deactivateShowComp: (state) => {
       state.showComponents = false;
     },
+    setMeInfo: (state, action: PayloadAction<Me>) => {
+      state.me = action.payload;
+    },
   },
 
   extraReducers: (builder) => {
@@ -61,9 +67,11 @@ export const {
   activateOrthCam,
   deactivateOrthCam,
   deactivateShowComp,
+  setMeInfo,
 } = displaySlice.actions;
 
 export const selectPath = (state: RootState) => state.displayReducer.path;
+export const selectMe = (state: RootState) => state.displayReducer.me;
 export const selectShowComponent = (state: RootState) =>
   state.displayReducer.showComponents;
 

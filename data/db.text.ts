@@ -1,4 +1,4 @@
-import { Project } from "../../../app/features/projectSlice";
+import { Project } from "../app/features/projectSlice";
 
 export default [
   {

@@ -1,5 +1,5 @@
 import React, { Key } from "react";
-import { curvesPoints } from "./paths";
+import { curvesPoints } from "../../../data/paths";
 import * as THREE from "three";
 import { Line } from "@react-three/drei";
 
