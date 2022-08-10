@@ -11,11 +11,19 @@ export enum PathLine {
   tablet = "tablet",
 }
 
+export enum MeDesc {
+  Objective = "Objective",
+  Education = "Education",
+  Experience = "Experience",
+  Skills = "Skills",
+}
+
 type InitState = {
   path?: PathLine;
   orthCamStatus: boolean;
   showComponents: boolean;
   me?: Me | null;
+  meDisplay: MeDesc;
 };
 
 const initialState: InitState = {
@@ -23,6 +31,7 @@ const initialState: InitState = {
   orthCamStatus: false,
   showComponents: false,
   me: null,
+  meDisplay: MeDesc.Objective,
 };
 
 export const setShowCompTrueAsync = createAsyncThunk(
@@ -53,6 +62,9 @@ export const displaySlice = createSlice({
     setMeInfo: (state, action: PayloadAction<Me>) => {
       state.me = action.payload;
     },
+    setMeDisplay: (state, action: PayloadAction<MeDesc>) => {
+      state.meDisplay = action.payload;
+    },
   },
 
   extraReducers: (builder) => {
@@ -68,10 +80,12 @@ export const {
   deactivateOrthCam,
   deactivateShowComp,
   setMeInfo,
+  setMeDisplay,
 } = displaySlice.actions;
 
 export const selectPath = (state: RootState) => state.displayReducer.path;
 export const selectMe = (state: RootState) => state.displayReducer.me;
+export const selectMeDis = (state: RootState) => state.displayReducer.meDisplay;
 export const selectShowComponent = (state: RootState) =>
   state.displayReducer.showComponents;
 

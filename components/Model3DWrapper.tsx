@@ -21,7 +21,7 @@ const Model3DWrapper = () => {
       )}
       <ambientLightProbe args={[0xffffff, 0.1]} />
       {/* <Lines /> */}
-      {/* <Model /> */}
+      <Model />
     </group>
   );
 };

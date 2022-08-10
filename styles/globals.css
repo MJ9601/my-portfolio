@@ -115,4 +115,7 @@ canvas {
   .button-link {
     @apply ring-2 px-4 rounded-full py-1 transition-all ease-linear duration-300 hover:bg-transparent text-white;
   }
+  .container-desc {
+    @apply w-full px-1 h-full overflow-y-auto scrollbar-desc;
+  }
 }
