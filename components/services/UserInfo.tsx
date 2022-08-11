@@ -84,9 +84,17 @@ export const Skills = () => {
         {me?.Skills.map((skill, index) => (
           <div className="relative group">
             <img src={skill.Icon} alt="" className="w-12 lg:w-20" />
-            <p className="absolute -bottom-6 left-4 rounded-md hidden group-hover:block bg-black text-white px-1 w-[150%] lg:w-[110%] capitalize text-xs lg:text-base transition-all duration-300 z-20">
-              {skill.name}
-            </p>
+            <div className="absolute -top-0 left-4 rounded-md hidden group-hover:block bg-black text-white px-1 w-[150%] lg:w-[110%] capitalize text-xs lg:text-base transition-all ease-linear duration-300 z-20">
+              <p>{skill.name}</p>
+              <div className="w-full  h-2 ring-1 ring-gray-500 my-1 rounded-full">
+                <div
+                  className={`h-2 rounded-full bg-slate-500  text-xs flex justify-center items-center`}
+                  style={{ width: `${skill.value}%` }}
+                >
+                  {skill.value}%
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>

@@ -1,0 +1,107 @@
+.loader-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.loader-ring {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top: 5px solid #e41cf8;
+  margin: -45px;
+  animation: animate 3s linear infinite;
+}
+
+.loader-ring::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #e41cf8;
+  top: 15px;
+  right: 15px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 5px #e41cf833, 0 0 0 10px #e41cf822, 0 0 0 20px #e41cf811,
+    0 0 0 30px #e41cf804, 0 0 0 50px #e41cf801;
+}
+
+.loader-ring:nth-child(2) {
+  animation: animate2 3s linear infinite;
+  border-top: 5px solid #93ff2d;
+  animation-delay: -1s;
+}
+
+.loader-ring:nth-child(2):before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #93ff2d;
+  bottom: 15px;
+  left: 15px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 5px #93ff2d33, 0 0 0 10px #93ff2d22, 0 0 0 20px #93ff2d11,
+    0 0 0 30px #93ff2d04, 0 0 0 50px #93ff2d01;
+}
+
+.loader-ring:nth-child(3) {
+  animation: animate2 3s linear infinite;
+  border-left: 5px solid #24edff;
+  border-top-color: transparent;
+  animation-delay: -2s;
+  position: absolute;
+  top: -96.66px;
+}
+
+.loader-ring:nth-child(3):before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #24edff;
+  top: initial;
+  bottom: 15px;
+  left: 15px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 5px #24edff33, 0 0 0 10px #24edff22, 0 0 0 20px #24edff11,
+    0 0 0 30px #24edff04, 0 0 0 50px #24edff01;
+}
+
+.loader-text {
+  color: #eee;
+  position: absolute;
+  font-size: 30px;
+  bottom: 20vh;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

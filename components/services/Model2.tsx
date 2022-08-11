@@ -52,7 +52,8 @@ export function Model(props: any) {
     setDisplay(curPath == PathLine.tv && orthStatus ? false : true);
     if (curPath == PathLine.monitors) {
       monitor1Ref.current!.material = loadingPic(screen1Src);
-      monitor2Ref.current!.material = loadingPic("./logo-720.png");
+      // @ts-ignore
+      monitor2Ref.current!.material = loadingPic(me[userInfoDis]?.image);
     }
     if (!orthStatus) {
       monitor1Ref.current!.material = loadingPic("./logo-720.png");

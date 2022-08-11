@@ -31,8 +31,8 @@ const RectAreaLights = ({
   rectLight.castShadow = true;
   scene.add(rectLight);
   rectLight.lookAt(0, 2, 0);
-  const axisHelper = new THREE.AxesHelper();
-  scene.add(axisHelper);
+  // const axisHelper = new THREE.AxesHelper();
+  // scene.add(axisHelper);
 
   const lightHelper = new RectAreaLightHelper(rectLight);
 
