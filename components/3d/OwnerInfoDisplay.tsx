@@ -7,9 +7,9 @@ import {
   selectPath,
   selectShowComponent,
   setMeDisplay,
-} from "../app/features/displaySlice";
-import { useAppDispatch, useAppSelector } from "../app/store";
-import { Education, Experience, Objective, Skills } from "./services/UserInfo";
+} from "../../app/features/displaySlice";
+import { useAppDispatch, useAppSelector } from "../../app/store";
+import { Education, Experience, Objective, Skills } from "../services/UserInfo";
 
 const OwnerInfoDisplay = () => {
   const path = useAppSelector(selectPath);
@@ -24,7 +24,7 @@ const OwnerInfoDisplay = () => {
         path == PathLine.monitors && compStatus ? "opacity-1" : "opacity-0"
       } absolute transition-all delay-[2s] top-[16.7%] left-[6.5%] w-[82.9%] h-[53.6%] `}
     >
-      <div className="absolute top-0 left-0 bg-[rgba(255,255,255,.4)] h-full w-[46.8%] py-2 px-2">
+      <div className="absolute top-0 left-0  h-full w-[46.8%] py-2 px-2">
         <h3 className="text-2xl font-semibold">{me?.Objective.name}</h3>
         <div className="h-[90%]">
           <>{meDisplay == MeDesc.Objective && <Objective />}</>
@@ -33,7 +33,7 @@ const OwnerInfoDisplay = () => {
           <>{meDisplay == MeDesc.Skills && <Skills />}</>
         </div>
       </div>
-      <div className="absolute top-0 right-0 bg-[rgba(255,255,255,.4)] h-full w-[46.5%]">
+      <div className="absolute top-0 right-0 h-full w-[46.5%]">
         <div className="w-[50%] space-y-3 mx-3 my-3">
           {Object.keys(me!).map((key) => (
             <div

@@ -6,14 +6,18 @@ import React, { Ref, useEffect, useRef, useState } from "react";
 import { useGLTF, useAnimations, useFBO } from "@react-three/drei";
 import { glassMaterial } from "./utils/glassMaterial";
 import { useFrame } from "@react-three/fiber";
-import { loadingGeneralVideo } from "./utils/loadingAssets";
+import { loadingGeneralVideo, loadingPic } from "./utils/loadingAssets";
 import { Mesh } from "three";
 import { useAppSelector } from "../../app/store";
 import { selectCurrentProject } from "../../app/features/projectSlice";
 import {
   PathLine,
+  selectMe,
+  selectMeDis,
   selectOrthCam,
   selectPath,
+  selectScreen1,
+  selectScreen2,
 } from "../../app/features/displaySlice";
 
 export function Model(props: any) {
@@ -24,6 +28,10 @@ export function Model(props: any) {
   const curProject = useAppSelector(selectCurrentProject);
   const curPath = useAppSelector(selectPath);
   const orthStatus = useAppSelector(selectOrthCam);
+  const screen1Src = useAppSelector(selectScreen1);
+  const screen2Src = useAppSelector(selectScreen2);
+  const userInfoDis = useAppSelector(selectMeDis);
+  const me = useAppSelector(selectMe);
 
   const [display, setDisplay] = useState(true);
 
@@ -42,9 +50,15 @@ export function Model(props: any) {
   useEffect(() => {
     tvRef.current!.material = loadingGeneralVideo(curProject?.videoSrc);
     setDisplay(curPath == PathLine.tv && orthStatus ? false : true);
-    // monitor1Ref.current!.material = loadingGeneralVideo(curProject?.videoSrc);
+    if (curPath == PathLine.monitors) {
+      monitor1Ref.current!.material = loadingPic(screen1Src);
+      monitor2Ref.current!.material = loadingPic("./logo-720.png");
+    }
+    if (!orthStatus) {
+      monitor1Ref.current!.material = loadingPic("./logo-720.png");
+    }
     // monitor2Ref.current!.material = loadingGeneralVideo(curProject?.videoSrc);
-  }, [curProject, orthStatus]);
+  }, [curProject, orthStatus, userInfoDis]);
 
   return (
     <group
@@ -210,7 +224,7 @@ export function Model(props: any) {
           name="screen-1"
           ref={monitor1Ref as Ref<Mesh>}
           geometry={nodes["screen-1"].geometry}
-          material={materials.screen}
+          material={loadingPic()}
           position={[21.7, 8.56, -0.55]}
           rotation={[-1.57, 0, 3.12]}
         />
@@ -218,7 +232,7 @@ export function Model(props: any) {
           name="screen-2"
           ref={monitor2Ref as Ref<Mesh>}
           geometry={nodes["screen-2"].geometry}
-          material={materials.screen}
+          material={loadingPic()}
           position={[21.7, 8.56, -0.55]}
           rotation={[-1.57, 0, 3.12]}
         />
@@ -389,7 +403,7 @@ export function Model(props: any) {
         <mesh
           name="phone-screen"
           geometry={nodes["phone-screen"].geometry}
-          material={loadingGeneralVideo()}
+          material={loadingPic("./logo-720.png")}
           position={[26.03, 6.4, 2.91]}
           rotation={[-Math.PI, 0.22, -Math.PI]}
         />
@@ -719,7 +733,7 @@ export function Model(props: any) {
         <mesh
           name="tablet-screen"
           geometry={nodes["tablet-screen"].geometry}
-          material={loadingGeneralVideo()}
+          material={loadingPic("./logo-720.png")}
           position={[16.76, 3.16, 22.71]}
           rotation={[-Math.PI, 1.06, -Math.PI]}
         />

@@ -24,6 +24,8 @@ type InitState = {
   showComponents: boolean;
   me?: Me | null;
   meDisplay: MeDesc;
+  screen1Src: string;
+  screen2Src: string;
 };
 
 const initialState: InitState = {
@@ -32,6 +34,8 @@ const initialState: InitState = {
   showComponents: false,
   me: null,
   meDisplay: MeDesc.Objective,
+  screen1Src: "./images/bg.jpg",
+  screen2Src: "./logo-720.png",
 };
 
 export const setShowCompTrueAsync = createAsyncThunk(
@@ -65,6 +69,12 @@ export const displaySlice = createSlice({
     setMeDisplay: (state, action: PayloadAction<MeDesc>) => {
       state.meDisplay = action.payload;
     },
+    setScreen1Display: (state, action: PayloadAction<string>) => {
+      state.screen1Src = action.payload;
+    },
+    setScreen2Display: (state, action: PayloadAction<string>) => {
+      state.screen2Src = action.payload;
+    },
   },
 
   extraReducers: (builder) => {
@@ -81,10 +91,16 @@ export const {
   deactivateShowComp,
   setMeInfo,
   setMeDisplay,
+  setScreen1Display,
+  setScreen2Display,
 } = displaySlice.actions;
 
 export const selectPath = (state: RootState) => state.displayReducer.path;
 export const selectMe = (state: RootState) => state.displayReducer.me;
+export const selectScreen1 = (state: RootState) =>
+  state.displayReducer.screen1Src;
+export const selectScreen2 = (state: RootState) =>
+  state.displayReducer.screen2Src;
 export const selectMeDis = (state: RootState) => state.displayReducer.meDisplay;
 export const selectShowComponent = (state: RootState) =>
   state.displayReducer.showComponents;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Project } from "../app/features/projectSlice";
+import { Project } from "../../app/features/projectSlice";
 
 const ProjectInfos = ({ project }: { project: Project }) => {
   console.log(project);

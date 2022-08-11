@@ -3,9 +3,9 @@ import {
   PathLine,
   selectPath,
   selectShowComponent,
-} from "../app/features/displaySlice";
-import { selectCurrentProject } from "../app/features/projectSlice";
-import { useAppSelector } from "../app/store";
+} from "../../app/features/displaySlice";
+import { selectCurrentProject } from "../../app/features/projectSlice";
+import { useAppSelector } from "../../app/store";
 import ProjectInfos from "./ProjectInfos";
 import ProjectSlider from "./ProjectSlider";
 

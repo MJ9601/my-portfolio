@@ -3,9 +3,9 @@ import {
   PathLine,
   selectPath,
   selectShowComponent,
-} from "../app/features/displaySlice";
-import { useAppSelector } from "../app/store";
-import socialMedia from "../data/socialMedia";
+} from "../../app/features/displaySlice";
+import { useAppSelector } from "../../app/store";
+import socialMedia from "../../data/socialMedia";
 
 const ContactFrom = () => {
   const path = useAppSelector(selectPath);

@@ -21,3 +21,18 @@ export const loadingGeneralVideo = (videoSrc?: string) => {
 
   return material;
 };
+
+export const loadingPic = (picSrc?: string) => {
+  const imageTexture = new THREE.TextureLoader().load(
+    picSrc ? picSrc : "./logo-720.png"
+  );
+  imageTexture.flipY = false;
+  imageTexture.generateMipmaps = false;
+  imageTexture.minFilter = THREE.NearestFilter;
+  imageTexture.magFilter = THREE.NearestFilter;
+  imageTexture.encoding = THREE.sRGBEncoding;
+
+  const material = new THREE.MeshBasicMaterial({ map: imageTexture });
+
+  return material;
+};

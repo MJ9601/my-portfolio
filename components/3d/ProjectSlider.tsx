@@ -3,8 +3,8 @@ import {
   selectAllProjects,
   selectCurrentProject,
   setCurrentProject,
-} from "../app/features/projectSlice";
-import { useAppDispatch, useAppSelector } from "../app/store";
+} from "../../app/features/projectSlice";
+import { useAppDispatch, useAppSelector } from "../../app/store";
 
 const ProjectSlider = () => {
   const projects = useAppSelector(selectAllProjects);

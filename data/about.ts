@@ -36,13 +36,46 @@ export default {
         description: "I was a freelancer",
         image: "",
       },
+      {
+        name: "freelance",
+        date: "2021-2022",
+        description: "I was a freelancer",
+        image: "",
+      },
+      {
+        name: "freelance",
+        date: "2021-2022",
+        description: "I was a freelancer",
+        image: "",
+      },
+      {
+        name: "freelance",
+        date: "2021-2022",
+        description: "I was a freelancer",
+        image: "",
+      },
     ],
   },
   Skills: [
-    { name: "HTML/CSS", Icon: "", value: 90 },
-    { name: "HTML/CSS", Icon: "", value: 90 },
-    { name: "HTML/CSS", Icon: "", value: 90 },
-    { name: "HTML/CSS", Icon: "", value: 90 },
+    { name: "html", Icon: "./icons/html.png", value: 100 },
+    { name: "css", Icon: "./icons/css.png", value: 100 },
+    { name: "js", Icon: "./icons/js.png", value: 100 },
+    { name: "ts", Icon: "./icons/ts.png", value: 100 },
+    { name: "react", Icon: "./icons/react.png", value: 100 },
+    { name: "next", Icon: "./icons/next.png", value: 100 },
+    { name: "redux", Icon: "./icons/redux.png", value: 100 },
+    { name: "recoil", Icon: "./icons/recoil.png", value: 100 },
+    { name: "material-ui", Icon: "./icons/materialui.png", value: 100 },
+    { name: "mantine-ui", Icon: "./icons/mantineui.png", value: 100 },
+    { name: "tailwindcss", Icon: "./icons/tailwindcss.png", value: 100 },
+    { name: "bootstrap", Icon: "./icons/bootstrap.png", value: 100 },
+    { name: "nodejs", Icon: "./icons/nodejs.png", value: 100 },
+    { name: "express", Icon: "./icons/express.png", value: 100 },
+    { name: "mongodb", Icon: "./icons/mongodb.png", value: 100 },
+    { name: "firebase", Icon: "./icons/firebase.png", value: 100 },
+    { name: "apollo", Icon: "./icons/apollo.svg", value: 100 },
+    { name: "graphql", Icon: "./icons/graphql.png", value: 100 },
+    { name: "restapi", Icon: "./icons/restapi.png", value: 100 },
   ],
 } as Me;
 
@@ -68,6 +101,9 @@ export type JobDesc = {
   date: string;
   description: string;
   image: string;
+  location?: string;
+  company?: string;
+  site?: string;
 };
 
 export type Skill = {

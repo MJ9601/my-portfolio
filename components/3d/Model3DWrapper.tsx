@@ -1,12 +1,12 @@
 import { OrbitControls, Stars, useAspect } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import React, { useRef } from "react";
-import { selectOrthCam } from "../app/features/displaySlice";
-import { useAppSelector } from "../app/store";
-import Camera from "./services/Camera";
-import Lights from "./services/Lights";
-import { Model } from "./services/Model2";
-import Lines from "./services/utils/lines";
+import { selectOrthCam } from "../../app/features/displaySlice";
+import { useAppSelector } from "../../app/store";
+import Camera from "../services/Camera";
+import Lights from "../services/Lights";
+import { Model } from "../services/Model2";
+import Lines from "../services/utils/lines";
 
 const Model3DWrapper = () => {
   // useAspect(window.innerWidth, window.innerHeight, 0.5);
