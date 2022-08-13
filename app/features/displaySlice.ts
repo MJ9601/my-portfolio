@@ -26,6 +26,7 @@ type InitState = {
   meDisplay: MeDesc;
   screen1Src: string;
   screen2Src: string;
+  activeLoader: boolean;
 };
 
 const initialState: InitState = {
@@ -36,6 +37,7 @@ const initialState: InitState = {
   meDisplay: MeDesc.Objective,
   screen1Src: "./images/bg.jpg",
   screen2Src: "./logo-720.png",
+  activeLoader: true,
 };
 
 export const setShowCompTrueAsync = createAsyncThunk(
@@ -75,6 +77,9 @@ export const displaySlice = createSlice({
     setScreen2Display: (state, action: PayloadAction<string>) => {
       state.screen2Src = action.payload;
     },
+    deActiveLoaderStatus: (state) => {
+      state.activeLoader = false;
+    },
   },
 
   extraReducers: (builder) => {
@@ -93,9 +98,12 @@ export const {
   setMeDisplay,
   setScreen1Display,
   setScreen2Display,
+  deActiveLoaderStatus,
 } = displaySlice.actions;
 
 export const selectPath = (state: RootState) => state.displayReducer.path;
+export const selectActiveLoader = (state: RootState) =>
+  state.displayReducer.activeLoader;
 export const selectMe = (state: RootState) => state.displayReducer.me;
 export const selectScreen1 = (state: RootState) =>
   state.displayReducer.screen1Src;

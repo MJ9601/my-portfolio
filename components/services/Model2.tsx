@@ -8,9 +8,10 @@ import { glassMaterial } from "./utils/glassMaterial";
 import { useFrame } from "@react-three/fiber";
 import { loadingGeneralVideo, loadingPic } from "./utils/loadingAssets";
 import { Mesh } from "three";
-import { useAppSelector } from "../../app/store";
+import { useAppDispatch, useAppSelector } from "../../app/store";
 import { selectCurrentProject } from "../../app/features/projectSlice";
 import {
+  deActiveLoaderStatus,
   PathLine,
   selectMe,
   selectMeDis,
@@ -32,6 +33,8 @@ export function Model(props: any) {
   const screen2Src = useAppSelector(selectScreen2);
   const userInfoDis = useAppSelector(selectMeDis);
   const me = useAppSelector(selectMe);
+
+  const dispatch = useAppDispatch();
 
   const [display, setDisplay] = useState(true);
 
@@ -58,8 +61,13 @@ export function Model(props: any) {
     if (!orthStatus) {
       monitor1Ref.current!.material = loadingPic("./logo-720.png");
     }
+
+    if (nodes) {
+      dispatch(deActiveLoaderStatus());
+    }
+
     // monitor2Ref.current!.material = loadingGeneralVideo(curProject?.videoSrc);
-  }, [curProject, orthStatus, userInfoDis]);
+  }, [curProject, orthStatus, userInfoDis, nodes]);
 
   return (
     <group

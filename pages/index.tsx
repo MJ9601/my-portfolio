@@ -6,6 +6,7 @@ import { Ref, Suspense, useEffect, useRef, useState } from "react";
 import { Provider } from "react-redux";
 import {
   PathLine,
+  selectActiveLoader,
   selectOrthCam,
   selectPath,
 } from "../app/features/displaySlice";
@@ -23,19 +24,19 @@ const Home: NextPage = () => {
   console.log(orthCamStatus);
   const canvasRef = useRef<HTMLCanvasElement>();
   const router = useRouter();
-  const [activeLoader, setActiveLoader] = useState(true);
+  const loaderStatus = useAppSelector(selectActiveLoader);
 
   useEffect(() => {
     if (window.innerWidth < 580) {
       router.push("/2d");
     }
-    const updateLoaderStatus = async () => {
-      setTimeout(() => {
-        setActiveLoader(false);
-      }, 3000);
-    };
+    // const updateLoaderStatus = async () => {
+    //   setTimeout(() => {
+    //     setActiveLoader(false);
+    //   }, 3000);
+    // };
 
-    updateLoaderStatus();
+    // updateLoaderStatus();
     // window.addEventListener("resize", resizingCanvas);
     // return () => window.removeEventListener("resize", resizingCanvas);
   }, []);
@@ -47,17 +48,14 @@ const Home: NextPage = () => {
         <link sizes="32x32" rel="icon" type="image/png" href="/logo.png" />
       </Head>
       <div className="relative ">
-        {!activeLoader ? (
+        <Canvas className="canvas" ref={canvasRef as Ref<HTMLCanvasElement>}>
+          <Suspense fallback={<Loader />} />
+          <Provider store={store}>
+            <Model3DWrapper />
+          </Provider>
+        </Canvas>
+        {!loaderStatus ? (
           <>
-            <Canvas
-              className="canvas"
-              ref={canvasRef as Ref<HTMLCanvasElement>}
-            >
-              <Suspense fallback={<Loader />} />
-              <Provider store={store}>
-                <Model3DWrapper />
-              </Provider>
-            </Canvas>
             <Controlers />
             {path == PathLine.laptop && orthCamStatus && <ContactFrom />}
             {path == PathLine.monitors && orthCamStatus && <OwnerInfoDisplay />}
