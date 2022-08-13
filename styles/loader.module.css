@@ -105,3 +105,16 @@
     transform: rotate(0deg);
   }
 }
+
+#tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: -2;
+}
+#tsparticles canvas {
+  height: 100vh !important;
+}

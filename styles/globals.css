@@ -61,7 +61,7 @@ canvas {
     background-color: transparet;
   }
   .scrollbar::-webkit-scrollbar-thumb {
-    background: #000;
+    background: #00ce2b;
     cursor: pointer;
     border-radius: 99px;
   }
@@ -73,14 +73,14 @@ canvas {
     background-color: transparet;
   }
   .scrollbar-desc::-webkit-scrollbar-thumb {
-    background: #222;
+    background: #00ce2b;
     border-radius: 99px;
   }
 }
 
 @layer components {
   .controlsButton {
-    @apply hidden group-hover:block absolute rotate-[10deg] w-[380px] py-4 text-end hover:text-black font-sans font-bold cursor-pointer z-10 text-gray-500 hover:tracking-wider transition-all ease-linear duration-75;
+    @apply hidden group-hover:block absolute rotate-[10deg] w-[380px] py-4 text-end  font-sans font-bold cursor-pointer z-10 text-gray-500 hover:tracking-wider transition-all ease-linear duration-300 hover:text-green-500;
   }
 
   .input {
@@ -118,5 +118,22 @@ canvas {
   }
   .container-desc {
     @apply w-full px-1 h-[88%]  overflow-y-auto scrollbar-desc;
+  }
+
+  .section {
+    @apply w-full my-8 bg-[#ffffff66] py-4;
+  }
+  .section-head {
+    @apply relative w-full h-[120px] bg-[#ffffff66];
+  }
+  .section-bg {
+    @apply absolute w-full h-full text-center font-[900] text-[#00000016] text-[80px] md:text-9xl justify-start -z-[2] uppercase;
+  }
+  .section-title {
+    @apply w-full h-full text-center font-extrabold text-3xl lg:text-5xl flex justify-center items-center pt-2 relative before:absolute before:border-b-4 before:border-green-400 before:-top-6  before:h-full before:w-[10%];
+  }
+
+  .section-content {
+    @apply flex justify-center items-center gap-5 pt-4 mt-4 container mx-auto flex-col md:flex-row;
   }
 }

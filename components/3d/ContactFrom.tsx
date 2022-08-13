@@ -21,7 +21,7 @@ const ContactFrom = () => {
       <div className="flex flex-wrap overflow-y-auto h-full mx-1 lg:mx-0 scrollbar-desc">
         <div className="form-wrapper">
           <form className="w-[100%] space-y-3 h-fit ">
-            <h3 className="form-title">Let's Discuss Your Project</h3>
+            <h3 className="form-title uppercase">Send Me a Note</h3>
             <label htmlFor="" className="label">
               <h6 className="title">Name</h6>
               <input type="text" name="" id="" className="input" />

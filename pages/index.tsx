@@ -1,7 +1,8 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Ref, Suspense, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
+import { Ref, Suspense, useEffect, useRef, useState } from "react";
 import { Provider } from "react-redux";
 import {
   PathLine,
@@ -21,16 +22,23 @@ const Home: NextPage = () => {
   const path = useAppSelector(selectPath);
   console.log(orthCamStatus);
   const canvasRef = useRef<HTMLCanvasElement>();
+  const router = useRouter();
+  const [activeLoader, setActiveLoader] = useState(true);
 
-  // useEffect(() => {
-  //   const resizingCanvas = () => {
-  //     canvasRef.current!.height = innerHeight;
-  //     canvasRef.current!.width = innerWidth;
-  //   };
+  useEffect(() => {
+    if (window.innerWidth < 580) {
+      router.push("/2d");
+    }
+    const updateLoaderStatus = async () => {
+      setTimeout(() => {
+        setActiveLoader(false);
+      }, 3000);
+    };
 
-  //   window.addEventListener("resize", resizingCanvas);
-  //   return () => window.removeEventListener("resize", resizingCanvas);
-  // });
+    updateLoaderStatus();
+    // window.addEventListener("resize", resizingCanvas);
+    // return () => window.removeEventListener("resize", resizingCanvas);
+  }, []);
 
   return (
     <>
@@ -39,15 +47,33 @@ const Home: NextPage = () => {
         <link sizes="32x32" rel="icon" type="image/png" href="/logo.png" />
       </Head>
       <div className="relative ">
-        <Canvas className="canvas" ref={canvasRef as Ref<HTMLCanvasElement>}>
-          <Suspense fallback={<Loader />} />
-          <Provider store={store}>{/* <Model3DWrapper /> */}</Provider>
-        </Canvas>
-        <Controlers />
-        {path == PathLine.laptop && orthCamStatus && <ContactFrom />}
-        {path == PathLine.monitors && orthCamStatus && <OwnerInfoDisplay />}
-        {path == PathLine.tv && orthCamStatus && <ProjectDisplay />}
-        {/* <Loader /> */}
+        {!activeLoader ? (
+          <>
+            <Canvas
+              className="canvas"
+              ref={canvasRef as Ref<HTMLCanvasElement>}
+            >
+              <Suspense fallback={<Loader />} />
+              <Provider store={store}>
+                <Model3DWrapper />
+              </Provider>
+            </Canvas>
+            <Controlers />
+            {path == PathLine.laptop && orthCamStatus && <ContactFrom />}
+            {path == PathLine.monitors && orthCamStatus && <OwnerInfoDisplay />}
+            {path == PathLine.tv && orthCamStatus && <ProjectDisplay />}
+            <div className="absolute bottom-3 right-5 ">
+              <a
+                href="/2d"
+                className="px-4 py-1 text-2xl text-white font-extrabold animate-pulse ring-1 rounded-lg ring-white hover:text-cyan-400 hover:ring-cyan-400"
+              >
+                2D
+              </a>
+            </div>
+          </>
+        ) : (
+          <Loader />
+        )}
       </div>
     </>
   );

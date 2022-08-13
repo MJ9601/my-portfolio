@@ -80,14 +80,36 @@ export default {
     { name: "blender", Icon: "./icons/blender.png", value: 50 },
     { name: "photoshop", Icon: "./icons/photoshop.png", value: 35 },
   ],
+  Services: [
+    {
+      name: "Web Development",
+      image: "./svgs/webDevelopment.svg",
+      description:
+        "Creating stunning website and webapp using React and Next frameworks.",
+    },
+    {
+      name: "Responsive Web Design",
+      image: "./svgs/responsiveWebDesign.svg",
+      description:
+        "Building website that are compatible with every device display.",
+    },
+    {
+      name: "Develop REST APIs",
+      image: "./svgs/restapi.svg",
+      description:
+        "Building strong REST apis using express with jwt authentication.",
+    },
+    {
+      name: "Develop graphQl Apis",
+      image: "./svgs/graphql.svg",
+      description:
+        "Creating graphql Apis using Apollo server with jwt authentication.",
+    },
+  ],
 } as Me;
 
 export type Me = {
-  Objective: {
-    name: string;
-    description: string;
-    image: string;
-  };
+  Objective: Objective;
   Education: {
     image: string;
     description: EducationInfo[];
@@ -97,6 +119,7 @@ export type Me = {
     description: JobDesc[];
   };
   Skills: Skill[];
+  Services: Objective[];
 };
 
 export type JobDesc = {
@@ -114,7 +137,11 @@ export type Skill = {
   Icon: string;
   value: number;
 };
-
+export type Objective = {
+  name: string;
+  description: string;
+  image: string;
+};
 export type EducationInfo = {
   name: string;
   Univercity: string;

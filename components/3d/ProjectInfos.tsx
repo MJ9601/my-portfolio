@@ -1,8 +1,11 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { Project } from "../../app/features/projectSlice";
 
 const ProjectInfos = ({ project }: { project: Project }) => {
   console.log(project);
+  const router = useRouter();
+  const pathName = router.pathname;
   return (
     <div className="py-2 px-4">
       <h3 className="font-semibold text-2xl mb-1 ">{project.name}</h3>
@@ -11,7 +14,11 @@ const ProjectInfos = ({ project }: { project: Project }) => {
           <h4 className="text-blue-600 text-sm">#{tag}</h4>
         ))}
       </div>
-      <div className="h-[200px] overflow-y-auto scrollbar-desc px-1 mt-2 py-2">
+      <div
+        className={`"h-[200px] overflow-y-auto scrollbar-desc px-1 mt-2 py-2" ${
+          pathName == "2d" && "h-fit"
+        }`}
+      >
         {project.description}
       </div>
       <h2 className="mt-4 font-bold text-lg">Technologies in Use</h2>

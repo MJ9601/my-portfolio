@@ -12,7 +12,7 @@ import {
 } from "../../app/features/displaySlice";
 import { setAllProject } from "../../app/features/projectSlice";
 import { useAppDispatch, useAppSelector } from "../../app/store";
-import db from "../../data/db.text";
+import db from "../../data/projects.db";
 import me from "../../data/about";
 
 const Controlers = () => {
@@ -21,9 +21,9 @@ const Controlers = () => {
 
   return (
     <div className="absolute top-0 left-0 w-[25%] h-[25%] ">
-      <div className="absolute rounded-full w-[100px] h-[100px] bg-fuchsia-50 -left-[50px] top-[-50px] animate-ping cursor-pointer "></div>
+      <div className="absolute rounded-full w-[100px] h-[100px] bg-white -left-[50px] top-[-50px] animate-ping cursor-pointer "></div>
 
-      <div className="group absolute w-[100px] h-[100px] rounded-full  top-[-50px] -left-[50px] hover:h-[400px] hover:w-[400px] hover:top-[-200px] hover:-left-[200px] bg-fuchsia-200 transition-all ease-linear grid place-items-center z-20">
+      <div className="group absolute w-[100px] h-[100px] rounded-full  top-[-50px] -left-[50px] hover:h-[400px] hover:w-[400px] hover:top-[-200px] hover:-left-[200px] bg-[#ffffff] transition-all ease-linear grid place-items-center z-20">
         {/* <img
           src="./logo.png"
           className="w-12 group-hover:z-50 object-cover absolute top-10 left-10"
