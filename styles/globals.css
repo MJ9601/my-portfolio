@@ -136,4 +136,8 @@ canvas {
   .section-content {
     @apply flex justify-center items-center gap-5 pt-4 mt-4 container mx-auto flex-col md:flex-row;
   }
+
+  .nav-link {
+    @apply relative overflow-hidden cursor-pointer before:absolute before:top-0 before:-left-full before:w-full before:h-full before:border-b-2 hover:text-green-500 before:border-b-green-500 hover:before:left-0 transition-all duration-500 ease-linear before:transition-all capitalize;
+  }
 }

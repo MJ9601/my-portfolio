@@ -9,7 +9,13 @@ import {
   setMeDisplay,
 } from "../../app/features/displaySlice";
 import { useAppDispatch, useAppSelector } from "../../app/store";
-import { Education, Experience, Objective, Skills } from "../services/UserInfo";
+import {
+  Education,
+  Experience,
+  Objective,
+  Services,
+  Skills,
+} from "../services/UserInfo";
 
 const OwnerInfoDisplay = () => {
   const path = useAppSelector(selectPath);
@@ -31,6 +37,7 @@ const OwnerInfoDisplay = () => {
           <>{meDisplay == MeDesc.Education && <Education />}</>
           <>{meDisplay == MeDesc.Experience && <Experience />}</>
           <>{meDisplay == MeDesc.Skills && <Skills />}</>
+          <>{meDisplay == MeDesc.Services && <Services />}</>
         </div>
       </div>
       <div className="absolute top-0 right-0 h-full w-[46.5%]">

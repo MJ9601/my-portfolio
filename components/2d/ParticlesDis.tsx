@@ -73,7 +73,7 @@ const ParticlesDis = () => {
             random: false,
             speed: 3,
             straight: false,
-            decay: 0.00001,
+            decay: 0.00005,
           },
           number: {
             density: {

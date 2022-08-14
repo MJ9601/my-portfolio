@@ -1,34 +1,103 @@
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import socialMedia from "../data/socialMedia";
+import axios from "axios";
 
 const Form = () => {
   const [copy, setCopy] = useState(false);
+  const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [err, setErr] = useState(false);
+
+  const onSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    const payload = { name, subject, email, message };
+    if (!name || !subject || !email || !message) {
+      setErr(true);
+    } else {
+      setErr(false);
+      console.log(payload);
+      const response = await (await axios.post("/api", payload)).data;
+      console.log(response);
+
+      if (response) setSuccess(true);
+    }
+
+    setName("");
+    setSubject("");
+    setMessage("");
+    setEmail("");
+    return;
+  };
+
+  useEffect(() => {
+    const setStatus = async () => {
+      if (success) {
+        await setTimeout(() => {
+          setSuccess(false);
+        }, 1000);
+      }
+    };
+
+    setStatus();
+  });
 
   return (
     <div className={"flex flex-wrap  h-full mx-1 lg:mx-0 scrollbar-desc"}>
       <div className="form-wrapper">
-        <form className="w-[100%] space-y-3 h-fit ">
+        <form className="w-[100%] space-y-3 h-fit " onSubmit={onSubmit}>
           <h3 className="form-title uppercase">Send Me a Note</h3>
           <label htmlFor="" className="label">
             <h6 className="title">Name</h6>
-            <input type="text" name="" id="" className="input" />
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="input"
+            />
           </label>
           <label htmlFor="" className="label">
             <h6 className="title">Email</h6>
-            <input type="email" name="" id="" className="input" />
+            <input
+              type="email"
+              className="input"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </label>
           <label htmlFor="" className="label">
             <h6 className="title">Subject</h6>
-            <input type="text" name="" id="" className="input" />
+            <input
+              type="text"
+              className="input"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+            />
           </label>
           <label htmlFor="" className="label">
             <h6 className="title">Message</h6>
-            <textarea name="" id="" className="input textarea" />
+            <textarea
+              className="input textarea"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
           </label>
           <label htmlFor="" className="label">
             <input type="submit" value="Send" className="input submit" />
           </label>
+          {err && (
+            <div className=" rounded-md bg-red-500 text-white w-fit  py-2 px-5">
+              All fields are required!
+            </div>
+          )}
+          {success && (
+            <div className=" rounded-md bg-green-500 text-white w-fit  py-2 px-5">
+              Message sent.
+            </div>
+          )}
         </form>
       </div>
 

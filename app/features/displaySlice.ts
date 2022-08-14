@@ -16,6 +16,7 @@ export enum MeDesc {
   Education = "Education",
   Experience = "Experience",
   Skills = "Skills",
+  Services = "Services",
 }
 
 type InitState = {
