@@ -104,9 +104,11 @@ const Form = () => {
       <div className="w-full h-fit lg:w-[38%] flex flex-col gap-1 ">
         <h2 className="form-title">Find Me Here</h2>
         <div className="relative flex justify-around mb-3 lg:flex-col gap-5 ml-3">
-          {socialMedia.map((link) => (
+          {socialMedia.map((link, index) => (
             <a
+              key={index}
               target={link.link && "_blank"}
+              rel="noreferrer"
               href={link.link && link.link}
               className="relative cursor-pointer flex gap-2 group  justify-start items-center"
               onClick={() => {

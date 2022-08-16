@@ -12,7 +12,10 @@ const SkillSets = () => {
       </div>
       <div className="section-content flex-wrap">
         {me?.Skills.map((skill, index) => (
-          <div className="ring-1 rounded-md  ring-green-500 py-2 px-3 flex gap-3">
+          <div
+            className="ring-1 rounded-md  ring-green-500 py-2 px-3 flex gap-3"
+            key={index}
+          >
             <img src={skill.Icon} alt="" className="w-14" />
             <div className="flex flex-col justify-around">
               <div className="flex justify-between min-w-[250px]">

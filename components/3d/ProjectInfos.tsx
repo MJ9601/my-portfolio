@@ -14,7 +14,9 @@ const ProjectInfos = ({ project }: { project: Project }) => {
       </h3>
       <div className="flex flex-wrap gap-1">
         {project.tags.map((tag, index) => (
-          <h4 className="text-blue-600 text-sm font-semibold">#{tag}</h4>
+          <h4 className="text-blue-600 text-sm font-semibold" key={index}>
+            #{tag}
+          </h4>
         ))}
       </div>
       <div
@@ -40,6 +42,7 @@ const ProjectInfos = ({ project }: { project: Project }) => {
         {project?.demoLink && (
           <a
             target="_blank"
+            rel="noreferrer"
             className="button-link ring-gray-600 bg-gray-600 hover:text-gray-600 "
             href={project?.demoLink}
           >
@@ -48,6 +51,7 @@ const ProjectInfos = ({ project }: { project: Project }) => {
         )}
         <a
           target="_blank"
+          rel="noreferrer"
           className="button-link ring-blue-600 bg-blue-600 hover:text-blue-600 "
           href={project.repoLink}
         >

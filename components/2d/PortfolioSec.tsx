@@ -22,6 +22,7 @@ const PortfolioSec = () => {
         <div className="flex scrollbar  md:items-center w-[90%] mx-auto md:mx-0 md:h-full  md:max-h-[50vh] md:scrollbar-desc  md:flex-col md:w-[23%] lg:w-[10%] overflow-x-auto py-[6px] ">
           {projects.map((project) => (
             <img
+              key={project._id}
               onClick={() => dispatch(setCurrentProject(project))}
               src={project.img}
               alt=""

@@ -16,6 +16,7 @@ export const Education = () => {
       <a
         href="https://scholar.google.com/citations?user=nJ1ZzmUAAAAJ&hl=en&oi=ao"
         target={"_blank"}
+        rel="noreferrer"
         className="text-sm hover:text-green-600 transition-all duration-300"
       >
         Google Scholar Profile
@@ -84,7 +85,7 @@ export const Skills = () => {
     <div className="h-[95%]">
       <div className=" container-desc flex flex-wrap items-start justify-start my-3 pb-3 gap-3">
         {me?.Skills.map((skill, index) => (
-          <div className="relative group">
+          <div className="relative group" key={index}>
             <img src={skill.Icon} alt="" className="w-12 lg:w-20" />
             <div className="absolute -top-0 left-4 rounded-md hidden group-hover:block bg-green-500 text-white px-1 w-[150%] lg:w-[110%] capitalize text-xs lg:text-base transition-all ease-linear duration-300 z-20">
               <p>{skill.name}</p>

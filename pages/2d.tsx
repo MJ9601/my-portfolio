@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { setMeInfo } from "../app/features/displaySlice";
 import { setAllProject, setCurrentProject } from "../app/features/projectSlice";
@@ -87,12 +88,12 @@ const Portfolio2D = () => {
         </h5>
       </div>
       <div className="fixed bottom-3 right-5 ">
-        <a
+        <Link
           href="/"
           className="px-4 py-1 text-2xl text-gray-400 font-extrabold animate-pulse ring-1 rounded-lg ring-gray-500 hover:text-cyan-400 hover:ring-cyan-400"
         >
           3D
-        </a>
+        </Link>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ const Banner = () => {
       </div>
       <div className="flex justify-center flex-col items-center w-full min-h-[100vh]">
         <h3 className="text-white text-2xl mb-2">Hi, there!</h3>
-        <h2 className="text-white text-6xl">I'm Mj</h2>
+        <h2 className="text-white text-6xl">I&#39;m Mj</h2>
         <div className="text-white mt-2 text-3xl">
           <TypewriterComponent
             onInit={(typewriter) => {

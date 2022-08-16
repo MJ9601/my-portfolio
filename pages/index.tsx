@@ -1,6 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { Ref, Suspense, useEffect, useRef, useState } from "react";
 import { Provider } from "react-redux";
@@ -61,12 +62,12 @@ const Home: NextPage = () => {
             {path == PathLine.monitors && orthCamStatus && <OwnerInfoDisplay />}
             {path == PathLine.tv && orthCamStatus && <ProjectDisplay />}
             <div className="absolute bottom-3 right-5 ">
-              <a
+              <Link
                 href="/2d"
                 className="px-4 py-1 text-2xl text-white font-extrabold animate-pulse ring-1 rounded-lg ring-white hover:text-cyan-400 hover:ring-cyan-400"
               >
                 2D
-              </a>
+              </Link>
             </div>
           </>
         ) : (
