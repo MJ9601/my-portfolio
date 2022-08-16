@@ -13,7 +13,7 @@ const PortfolioSec = () => {
   const projects = useAppSelector(selectAllProjects);
 
   return (
-    <div className="section">
+    <div className="section" id="portfolio">
       <div className="section-head">
         <div className="section-bg">Portfolio</div>
         <div className="section-title">My Work</div>
@@ -37,13 +37,23 @@ const PortfolioSec = () => {
           </div>
           <div className="w-full lg:w-[50%]">
             {curProject && (
-              <video
-                src={curProject!.videoSrc}
-                className="w-[90%] mx-auto rounded-sm"
-                autoPlay
-                muted
-                loop
-              ></video>
+              <>
+                {curProject.videoSrc ? (
+                  <video
+                    src={curProject!.videoSrc}
+                    className="w-[90%] mx-auto rounded-sm"
+                    autoPlay
+                    muted
+                    loop
+                  ></video>
+                ) : (
+                  <img
+                    src={curProject.img}
+                    alt=""
+                    className="w-[90%] mx-auto rounded-sm"
+                  />
+                )}
+              </>
             )}
           </div>
         </div>

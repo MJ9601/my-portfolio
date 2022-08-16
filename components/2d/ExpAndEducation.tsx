@@ -5,14 +5,23 @@ import { useAppSelector } from "../../app/store";
 const ExpAndEducation = () => {
   const me = useAppSelector(selectMe);
   return (
-    <div className="section">
+    <div className="section" id="resume">
       <div className="section-head">
         <div className="section-bg">Resume</div>
         <div className="section-title">Education & Experiance</div>
       </div>
       <div className="flex flex-col md:flex-row container xl:w-[80%] mx-auto gap-3">
         <div className="space-y-3 w-[90%] mx-auto mb-4">
-          <h3 className="text-2xl font-bold">Education</h3>
+          <div>
+            <h3 className="text-2xl font-bold">Education</h3>
+            <a
+              href="https://scholar.google.com/citations?user=nJ1ZzmUAAAAJ&hl=en&oi=ao"
+              target={"_blank"}
+              className="text-sm hover:text-green-600 transition-all duration-300"
+            >
+              Google Scholar Profile
+            </a>
+          </div>
           <div className="space-y-4 mb-3">
             {me?.Education.description.map((desc, index) => (
               <div className=" py-2 px-3 ring-green-500 space-y-2 mb-5  border-b-2 border-b-green-500 ">
@@ -21,7 +30,10 @@ const ExpAndEducation = () => {
                 </h3>
                 <div className="">
                   <h2 className="text-lg font-bold">{desc.name}</h2>
-                  <a href={desc.site} className="text-xs font-semibold">
+                  <a
+                    href={desc.site}
+                    className="text-xs font-semibold hover:text-green-600 transition-all duration-300"
+                  >
                     {desc.Univercity}, {desc.location}
                   </a>
                 </div>
@@ -41,7 +53,10 @@ const ExpAndEducation = () => {
                 <div className="">
                   <h2 className="text-lg font-bold">{desc.name}</h2>
                   {desc.company && (
-                    <a href={desc.site} className="text-xs font-semibold">
+                    <a
+                      href={desc.site}
+                      className="text-xs font-semibold hover:text-green-600 transition-all duration-300"
+                    >
                       {desc.company}, {desc.location}
                     </a>
                   )}

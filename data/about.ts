@@ -1,7 +1,8 @@
 export default {
   Objective: {
     name: "Mj Khodadadi",
-    description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis commodi quod consectetur. Tempore aspernatur provident reprehenderit ex doloremque consectetur? Modi cupiditate recusandae veniam laudantium minima qui vitae reiciendis molestias incidunt voluptatem inventore expedita dolorum facere, deleniti beatae animi dignissimos perferendis at atque voluptate rerum dicta delectus eius? Cumque, tempora nostrum beatae animi dignissimos perferendis at atque voluptate rerum dicta delectus eius? Cumque, tempora nostrum `,
+    description: `
+        I am a fullstack web developer and mechanical engineer, in fact got my master's on in mech. About a year ago (2021) I started coding occasionally. Suddenly the hobby became a habit that I couldn't shake. So  decided to change my career to Web development. Now a year later, I'd stand at the point where I'm capable develop the website's UI with React and Next framework, and develop backend and APIs (REST & graphql) using node and expressjs. Built a number of Websites and APIs using the above techs, some of them are displayed in the portfolio section of this website.`,
     image: "./logo-720.png",
   },
   Education: {
@@ -11,18 +12,18 @@ export default {
         name: "B.s Mechnical Engineering",
         Univercity: "Shahrood Univercity",
         date: "2014-2018",
-        site: "www.shahrood ui.com",
+        site: "https://shahroodut.ac.ir/en/",
         description:
-          "I am what I am, I am a mechenical engineer that spend four years",
+          "I got my Bachelors in mechanical engineering there, I worked on The build and development of Vertical wind turbines for Building sector.",
         location: "Iran",
       },
       {
         name: "M.s Mechnical Engineering",
-        Univercity: "Shahrood Univercity",
-        date: "2014-2018",
-        site: "www.shahrood ui.com",
+        Univercity: "Noshivani Univercity",
+        date: "2019-2021",
+        site: "https://nit.ac.ir/en",
         description:
-          "I am what I am, I am a mechenical engineer that spend four years",
+          "Spending almost three years there working on photovoltaic thermal systems, till I got my Master's in mechanical engineering",
         location: "Iran",
       },
     ],
@@ -33,25 +34,7 @@ export default {
       {
         name: "freelance",
         date: "2021-2022",
-        description: "I was a freelancer",
-        image: "",
-      },
-      {
-        name: "freelance",
-        date: "2021-2022",
-        description: "I was a freelancer",
-        image: "",
-      },
-      {
-        name: "freelance",
-        date: "2021-2022",
-        description: "I was a freelancer",
-        image: "",
-      },
-      {
-        name: "freelance",
-        date: "2021-2022",
-        description: "I was a freelancer",
+        description: "Develop a number of website's and APIs as freelancer.",
         image: "",
       },
     ],

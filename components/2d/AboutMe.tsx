@@ -5,7 +5,7 @@ import { useAppSelector } from "../../app/store";
 const AboutMe = () => {
   const me = useAppSelector(selectMe);
   return (
-    <div className="section">
+    <div className="section" id="about">
       <div className="section-head">
         <div className="section-bg">About Me</div>
         <div className="section-title">Know Me More</div>

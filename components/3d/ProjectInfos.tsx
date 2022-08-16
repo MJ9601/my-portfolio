@@ -6,17 +6,21 @@ const ProjectInfos = ({ project }: { project: Project }) => {
   console.log(project);
   const router = useRouter();
   const pathName = router.pathname;
+  console.log(pathName);
   return (
-    <div className="py-2 px-4">
-      <h3 className="font-semibold text-2xl mb-1 ">{project.name}</h3>
+    <div className={`"py-2 px-4" `}>
+      <h3 className="font-semibold text-2xl mb-1 text-orange-500">
+        {project.name}
+      </h3>
       <div className="flex flex-wrap gap-1">
         {project.tags.map((tag, index) => (
-          <h4 className="text-blue-600 text-sm">#{tag}</h4>
+          <h4 className="text-blue-600 text-sm font-semibold">#{tag}</h4>
         ))}
       </div>
       <div
-        className={`"h-[200px] overflow-y-auto scrollbar-desc px-1 mt-2 py-2" ${
-          pathName == "2d" && "h-fit"
+        className={`"h-[200px] overflow-y-auto scrollbar-desc px-1 mt-2 py-2 text-white  text-xl bg-[rgba(0,0,0,.7)] rounded-lg px-2" ${
+          router.pathname == "/2d" &&
+          "h-fit bg-[rgba(0,0,0,0)] text-black  px-1"
         }`}
       >
         {project.description}
@@ -33,13 +37,15 @@ const ProjectInfos = ({ project }: { project: Project }) => {
         ))}
       </div>
       <div className="flex justify-start gap-4 px-5 mt-5 pt-5">
-        <a
-          target="_blank"
-          className="button-link ring-gray-600 bg-gray-600 hover:text-gray-600 "
-          href={project?.demoLink}
-        >
-          Demo Link
-        </a>
+        {project?.demoLink && (
+          <a
+            target="_blank"
+            className="button-link ring-gray-600 bg-gray-600 hover:text-gray-600 "
+            href={project?.demoLink}
+          >
+            Demo Link
+          </a>
+        )}
         <a
           target="_blank"
           className="button-link ring-blue-600 bg-blue-600 hover:text-blue-600 "

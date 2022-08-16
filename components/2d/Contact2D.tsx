@@ -3,7 +3,7 @@ import Form from "../Form";
 
 const Contact2D = () => {
   return (
-    <div className="section">
+    <div className="section" id="contact">
       <div className="section-head">
         <div className="section-bg">Contact</div>
         <div className="section-title">Contact Me Now</div>
