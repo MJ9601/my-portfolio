@@ -26,7 +26,7 @@ export default [
     repoLink: "https://github.com/MJ9601/Disney-nextjs-clone",
     demoLink: "",
     img: "./images/disney.png",
-    videoSrc: "./videos/disney.mkv",
+    videoSrc: "./videos/disney.mp4",
   },
   {
     _id: "2",
@@ -153,7 +153,7 @@ Buyers are able to create an account and login to it using unique email and pass
     ],
     repoLink: "https://github.com/MJ9601/graphql-e-commerce-webapp",
     demoLink: "",
-    img: "./images/netflix-clone.png",
+    img: "./images/ecommerece.png",
     videoSrc: "./videos/ecommerce.mkv",
   },
   {
