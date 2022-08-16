@@ -8,6 +8,7 @@ import AboutMe from "../components/2d/AboutMe";
 import Banner from "../components/2d/Banner";
 import Contact2D from "../components/2d/Contact2D";
 import ExpAndEducation from "../components/2d/ExpAndEducation";
+import NavSec from "../components/2d/NavSec";
 import PortfolioSec from "../components/2d/PortfolioSec";
 import Services from "../components/2d/Services";
 import SkillSets from "../components/2d/SkillSets";
@@ -17,20 +18,10 @@ import dbProjects from "../data/projects.db";
 const Portfolio2D = () => {
   const dispatch = useAppDispatch();
 
-  const [navStatus, setNavStatus] = useState(false);
-
   useEffect(() => {
     dispatch(setMeInfo(me));
     dispatch(setAllProject(dbProjects));
     dispatch(setCurrentProject(dbProjects[0]));
-
-    addEventListener("scroll", () => {
-      window.scrollY > 60 ? setNavStatus(true) : setNavStatus(false);
-    });
-    return () =>
-      removeEventListener("scroll", () => {
-        window.scrollY > 60 ? setNavStatus(true) : setNavStatus(false);
-      });
   }, []);
   return (
     <>
@@ -39,7 +30,7 @@ const Portfolio2D = () => {
         <link sizes="32x32" rel="icon" type="image/png" href="/logo.png" />
       </Head>
       <div className="relative ">
-        <div className="absolute top-0 left-0 w-full min-h-[100vh] bg-[#eee] -z-10">
+        <div className="absolute top-0 left-0 right-0 min-h-[100vh] bg-[#eee] -z-10">
           <a
             href="https://unsplash.com/es/@altumcode?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
             className="-z-10"
@@ -51,33 +42,7 @@ const Portfolio2D = () => {
             />
           </a>
         </div>
-        <div
-          className={`" fixed top-0 left-0 w-full  py-2 z-50 flex px-3 justify-between items-center transition-colors duration-500 ease-in-out" ${
-            !navStatus ? "bg-transparent" : "bg-black"
-          }`}
-        >
-          <img src="./logo.png" alt="" className="w-12" />
-          <div className="md:flex justify-end items-center pt-1 gap-3 h-fit text-white hidden">
-            <a className="nav-link" href="#about">
-              About
-            </a>
-            <a className="nav-link" href="#portfolio">
-              portfolio
-            </a>
-            <a className="nav-link" href="#services">
-              services
-            </a>
-            <a className="nav-link" href="#resume">
-              resume
-            </a>
-            <a className="nav-link" href="#skills">
-              skills
-            </a>
-            <a className="nav-link" href="#contact">
-              contact
-            </a>
-          </div>
-        </div>
+        <NavSec />
         <Banner />
         <AboutMe />
         <PortfolioSec />
