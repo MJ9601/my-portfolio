@@ -88,11 +88,10 @@ const Portfolio2D = () => {
         </h5>
       </div>
       <div className="fixed bottom-3 right-5 ">
-        <Link
-          href="/"
-          className="px-4 py-1 text-2xl text-gray-400 font-extrabold animate-pulse ring-1 rounded-lg ring-gray-500 hover:text-cyan-400 hover:ring-cyan-400"
-        >
-          3D
+        <Link href="/">
+          <p className="px-4 py-1 text-2xl text-gray-400 font-extrabold animate-pulse ring-1 rounded-lg ring-gray-500 hover:text-cyan-400 hover:ring-cyan-400 cursor-pointer">
+            3D
+          </p>
         </Link>
       </div>
     </div>

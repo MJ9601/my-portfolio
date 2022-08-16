@@ -13,9 +13,10 @@ const Loader = () => {
       <div className="absolute bottom-3 right-5 ">
         <Link
           href="/2d"
-          className="px-4 py-1 text-2xl text-white font-extrabold animate-pulse ring-1 rounded-lg ring-white hover:text-cyan-400 hover:ring-cyan-400"
         >
-          2D
+          <p className="px-4 py-1 text-2xl text-gray-400 font-extrabold animate-pulse ring-1 rounded-lg ring-gray-500 hover:text-cyan-400 hover:ring-cyan-400 cursor-pointer">
+            2D
+          </p>
         </Link>
       </div>
     </div>
