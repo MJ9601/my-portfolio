@@ -13,7 +13,7 @@ const smtp: Smtp = {
   user: process.env.NEXT_PUBLIC_SMTP_USER!,
   pass: process.env.NEXT_PUBLIC_SMTP_PASS!,
   port: 2525,
-  secure: false,
+  secure: true,
 };
 
 const transporter = nodemailder.createTransport({
