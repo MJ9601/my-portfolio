@@ -31,7 +31,7 @@ export default [
   {
     _id: "2",
     name: "Netflix clone",
-    description: `The idea behind this web app is to be a clone from the Netflix using NEXT framework. To bootstrap the Project create-next-app is used. The Authentication will be handled by Next-auth and whole app is gonna be written in TypeScript.
+    description: `The idea behind this web app is to be a clone from the Netflix using NEXT framework. To bootstrap the Project create-next-app is used. The Authentication is handled by Next-auth and whole app is  written in TypeScript. User is able to sign in to her/his account using email, after verification of user's mail a link using nodemailer and smtp services will send to client containing accessToken that allows user to login.
     `,
     tags: [
       "Mongodb",
@@ -59,7 +59,7 @@ export default [
   {
     _id: "3",
     name: "Tesla clone",
-    description: `This web app is multiple page clone of tesla website that is create using reactjs frame work. The state of web app is managed using Redux toolkit.
+    description: `This web app is multiple pages clone of tesla website that is created using reactjs frame work. The state of web app is managed using Redux toolkit.
     `,
     tags: ["Mongodb", "RestAPI", "FirebaseAuthentication", "Responsive"],
     teches: [
@@ -79,9 +79,9 @@ export default [
   {
     _id: "4",
     name: "ChatApp",
-    description: `This project is chatroom web app that was created using MERN technologies in javascript. The state of this project is managed using [Redux toolkit]. In this web app client is able to create private chat with other clients, group for shared conversation, and channel for ..
+    description: `This project is chatroom web app that was created using MERN technologies in javascript. The state of this project is managed using [Redux toolkit]. In this web app client is able to create private chat with other clients, group for shared conversation, and channel for different goals.
 
-The web app support message as type of file, text, video, and picture. The ower and in group admin of group has the permission to delete or edit the messages. The client also can reply or like a message.
+The web app supports message as type of file, text, video, and picture. The ower of message or group admin has the permission to delete or edit the messages. The client also can reply or like a message. User can find other user using thier ids or profile name. Also in certain chat Client can search for messages.
     `,
     tags: ["Mongodb", "RestAPI", "CMS", "Responsive"],
     teches: [
@@ -104,7 +104,7 @@ The web app support message as type of file, text, video, and picture. The ower 
   {
     _id: "5",
     name: "Linkedin clone",
-    description: `This web app linkedin clone that is created using next frame work, and typescript,
+    description: `This web app linkedin clone that is created using next frame work, and typescript. the login and Authentication process is handled using NextAuth and google oath2.
     `,
     tags: ["Mongodb", "RestAPI", "GoogleAuthentication", "SSG", "Responsive"],
     teches: [
@@ -126,11 +126,11 @@ The web app support message as type of file, text, video, and picture. The ower 
   {
     _id: "6",
     name: "Graphql Ecommerece Webapp",
-    description: `This web app is fullstack e-commerce website that backend section is supported using express server with graphql and Apollo server technologies and frontend is supported using Next framework. The project is written in Typescript.
+    description: `This web app is fullstack e-commerce website that backend section is built using express server with graphql and Apollo server technologies and frontend is created using Next framework. The project is written in Typescript.
 
 In This project Owner of web app (Admin) is able to login with AccessToken and RefreshToken and create products or update them.
 
-Buyers are able to create an account and login to it using unique email and password. AccessToken and RefreshToken created using jwt ease the login process. Buyers can edit their info or Search for a product or filter products base on product categories.
+Buyers are able to create an account and login to it using unique email and password. AccessToken and RefreshToken created using jwt to ease the login process. Buyers can edit their info or Search for a product or filter products base on product categories.
     `,
     tags: ["Mongodb", "Authentication", "Graphql", "SSR", "Responsive"],
     teches: [
@@ -163,7 +163,7 @@ Buyers are able to create an account and login to it using unique email and pass
 
 The UI of this project was created using Nextjs framework and mantine UI is used to ease the process of creating UI. Axios is used to fetch data from express server.
 
-This project is written by Typescript. user Auth is profromed by Jwt on serverSide (backend) of project
+This project is written by Typescript. user Authentication is profromed by Jwt on serverSide (backend) of project
     `,
     tags: ["Mongodb", "RestAPI", "Authentication"],
     teches: [
@@ -186,7 +186,7 @@ This project is written by Typescript. user Auth is profromed by Jwt on serverSi
   {
     _id: "8",
     name: "Medium Clone",
-    description: `This webapp is Medium clone that allow owner to create and share post on the blog get comment and like in response. The webapp is created using Next framework using Typescript.
+    description: `This webapp is Medium clone that allow owner to create and share post on the blog and get comment and like in response. The webapp is created using Next framework using Typescript. The CMS of project is handled using Sanity.
     `,
     tags: ["Sanity", "Graphql", "SGG", "SSR"],
     teches: ["Typescript", "Next", "Material UI", "Styled motion"],
@@ -198,7 +198,7 @@ This project is written by Typescript. user Auth is profromed by Jwt on serverSi
   {
     _id: "9",
     name: "photo Gallery",
-    description: ` This simple blog allows the users to share their pictures and read a description about it. The webapp is developed using react and firebase storage and firestore database
+    description: ` This simple blog allows the users to share their pictures and write a description about it. The webapp is developed using react and firebase storage and firestore database
     `,
     tags: ["React", "Firebase-v9", "Responsive", "Firebase-storage"],
     teches: [
@@ -216,7 +216,7 @@ This project is written by Typescript. user Auth is profromed by Jwt on serverSi
   {
     _id: "10",
     name: "Store",
-    description: ` A simple store that is using fakeStoreApi as entery data, and user to sign in and a product to thier cart. The webapp is created using nextjs.
+    description: ` A simple store that is using fakeStoreApi as entery data. Client is able to sign in and add a product to thier cart. The webapp is created using nextjs. The authentication of project is handled using firebase Auth.
     `,
     tags: ["Responsive", "SSR", "SSG", "FirebaseAuth"],
     teches: ["Javascript", "Next", "Firebase", "Mantine UI"],
@@ -229,7 +229,7 @@ This project is written by Typescript. user Auth is profromed by Jwt on serverSi
     _id: "12",
     name: "Slack Clone",
     description: `
-    This is a simple clone that allows users to create group and chat with each others. The webapp is created using React framework and firestore database.
+    This is a simple clone that allows users to create group and chat with each others. The webapp is created using React framework and firestore database. Login and Auth process is handled using firebase Auth.
     `,
     tags: ["FirebaseAuth", "Firestore"],
     teches: [
@@ -248,7 +248,7 @@ This project is written by Typescript. user Auth is profromed by Jwt on serverSi
   {
     _id: "13",
     name: "Graphql server",
-    description: `This project is a simple graphql server that is created using typegraphql and supported by mongodb database. In this server user can create an account and using uniqe email. In login process user will receive an accessToken which allow him/her to create product. or update his/her product.
+    description: `This project is a simple graphql server that is created with typegraphql and supported by mongodb database. In this server user can create an account using uniqe email. In login process user will receive an accessToken which allow him/her to create product. or update his/her product.
     `,
     tags: [
       "Server",
