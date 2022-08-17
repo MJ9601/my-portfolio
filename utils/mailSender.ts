@@ -29,7 +29,7 @@ const transporter = nodemailder.createTransport({
 export default async function sendEmail(payload: SendMailOptions) {
   console.log(transporter);
   try {
-    let response = undefined;
+    let response = true;
     await transporter.sendMail(payload, (err, info) => {
       if (err) {
         console.log({ err });
