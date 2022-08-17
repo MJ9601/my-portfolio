@@ -12,7 +12,7 @@ const smtp: Smtp = {
   host: process.env.NEXT_PUBLIC_SMTP_HOST!,
   user: process.env.NEXT_PUBLIC_SMTP_USER!,
   pass: process.env.NEXT_PUBLIC_SMTP_PASS!,
-  port: 2525,
+  port: 587,
   secure: true,
 };
 
