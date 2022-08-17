@@ -12,22 +12,20 @@ const smtp: Smtp = {
   host: process.env.NEXT_PUBLIC_SMTP_HOST!,
   user: process.env.NEXT_PUBLIC_SMTP_USER!,
   pass: process.env.NEXT_PUBLIC_SMTP_PASS!,
-  port: 587,
+  port: 2525,
   secure: true,
 };
 
-const transporter = nodemailder.createTransport({
-  // @ts-ignore
-  ...smtp,
-  // @ts-ignore
-  auth: {
-    user: smtp.user,
-    pass: smtp.pass,
-  },
-});
-
 export default async function sendEmail(payload: SendMailOptions) {
-  console.log(transporter);
+  const transporter = nodemailder.createTransport({
+    // @ts-ignore
+    ...smtp,
+    // @ts-ignore
+    auth: {
+      user: smtp.user,
+      pass: smtp.pass,
+    },
+  });
   try {
     await new Promise((resolve, reject) => {
       // verify connection configuration
