@@ -29,7 +29,7 @@ const Portfolio2D = () => {
         <title>mj-khodadadi - 2D Portfilio</title>
         <link sizes="32x32" rel="icon" type="image/png" href="/logo.png" />
       </Head>
-      <div className="static w-[100vw] top-0 left-0 h-fit">
+      <div className="relative">
         <div className="absolute top-0 left-0 right-0 min-h-[100vh] bg-[#eee] -z-10">
           <a
             href="https://unsplash.com/es/@altumcode?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
