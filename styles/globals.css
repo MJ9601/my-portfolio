@@ -12,7 +12,12 @@ body {
   font-family: Roboto, sans;
   scroll-behavior: smooth;
 }
-
+#__next {
+  min-width: 100vw;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -139,5 +144,9 @@ canvas {
 
   .nav-link {
     @apply relative overflow-hidden cursor-pointer before:absolute before:top-0 before:-left-full before:w-full before:h-full before:border-b-2 hover:text-green-500 before:border-b-green-500 hover:before:left-0 transition-all duration-500 ease-linear before:transition-all capitalize;
+  }
+
+  .nav-link-resp {
+    @apply bg-black min-h-[100vh] fixed top-0 right-[-65%] sm:right-[-61%] w-[300px] grid place-items-center;
   }
 }

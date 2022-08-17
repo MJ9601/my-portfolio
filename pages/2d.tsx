@@ -26,10 +26,10 @@ const Portfolio2D = () => {
   return (
     <>
       <Head>
-        <title>2D Portfilio</title>
+        <title>mj-khodadadi - 2D Portfilio</title>
         <link sizes="32x32" rel="icon" type="image/png" href="/logo.png" />
       </Head>
-      <div className="relative ">
+      <div className="static w-[100vw] top-0 left-0 h-fit">
         <div className="absolute top-0 left-0 right-0 min-h-[100vh] bg-[#eee] -z-10">
           <a
             href="https://unsplash.com/es/@altumcode?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
@@ -60,7 +60,7 @@ const Portfolio2D = () => {
         </div>
         <div className="fixed bottom-3 right-5 ">
           <Link href="/">
-            <p className="px-4 py-1 text-2xl text-gray-400 font-extrabold animate-pulse ring-1 rounded-lg ring-gray-500 hover:text-cyan-400 hover:ring-cyan-400 cursor-pointer">
+            <p className="z-[100] px-4 py-1 text-2xl text-gray-400 font-extrabold animate-pulse ring-1 rounded-lg ring-gray-500 hover:text-cyan-400 hover:ring-cyan-400 cursor-pointer">
               3D
             </p>
           </Link>

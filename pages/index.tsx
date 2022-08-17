@@ -45,7 +45,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>3D Portfilio</title>
+        <title>mj-khodadadi - 3D Portfilio</title>
         <link sizes="32x32" rel="icon" type="image/png" href="/logo.png" />
       </Head>
       <div className="relative ">
