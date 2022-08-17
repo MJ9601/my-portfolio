@@ -3,10 +3,7 @@ import React from "react";
 import { Project } from "../../app/features/projectSlice";
 
 const ProjectInfos = ({ project }: { project: Project }) => {
-  console.log(project);
   const router = useRouter();
-  const pathName = router.pathname;
-  console.log(pathName);
   return (
     <div className={`"py-2 px-4" `}>
       <h3 className="font-semibold text-2xl mb-1 text-orange-500">

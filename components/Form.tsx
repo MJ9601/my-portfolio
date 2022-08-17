@@ -20,17 +20,7 @@ const Form = () => {
       setErr(true);
     } else {
       setErr(false);
-      console.log(payload);
       const response = await (await axios.post("/api", payload)).data;
-      console.log(response);
-      const smtp = {
-        host: process.env.NEXT_PUBLIC_SMTP_HOST!,
-        user: process.env.NEXT_PUBLIC_SMTP_USER!,
-        pass: process.env.NEXT_PUBLIC_SMTP_PASS!,
-        port: 2525,
-        secure: false,
-      };
-      console.log(smtp);
 
       if (response) setSuccess(true);
       if (!response) setFail(true);
