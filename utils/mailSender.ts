@@ -29,15 +29,29 @@ const transporter = nodemailder.createTransport({
 export default async function sendEmail(payload: SendMailOptions) {
   console.log(transporter);
   try {
+    await new Promise((resolve, reject) => {
+      // verify connection configuration
+      transporter.verify(function (error, success) {
+        if (error) {
+          console.log(error);
+          reject(error);
+        } else {
+          console.log("Server is ready to take our messages");
+          resolve(success);
+        }
+      });
+    });
     let response = true;
-    await transporter.sendMail(payload, (err, info) => {
-      if (err) {
-        console.log({ err });
-        response = false;
-      } else {
-        console.log({ info });
-        response = true;
-      }
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(payload, (err, info) => {
+        if (err) {
+          console.log({ err });
+          reject(err);
+        } else {
+          console.log({ info });
+          resolve(info);
+        }
+      });
     });
     return response;
   } catch (error: any) {
