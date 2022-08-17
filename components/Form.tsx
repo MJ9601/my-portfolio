@@ -10,6 +10,7 @@ const Form = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
+  const [fail, setFail] = useState(false);
   const [err, setErr] = useState(false);
 
   const onSubmit = async (e: FormEvent) => {
@@ -22,8 +23,17 @@ const Form = () => {
       console.log(payload);
       const response = await (await axios.post("/api", payload)).data;
       console.log(response);
+      const smtp = {
+        host: process.env.NEXT_PUBLIC_SMTP_HOST!,
+        user: process.env.NEXT_PUBLIC_SMTP_USER!,
+        pass: process.env.NEXT_PUBLIC_SMTP_PASS!,
+        port: 2525,
+        secure: false,
+      };
+      console.log(smtp);
 
       if (response) setSuccess(true);
+      if (!response) setFail(true);
     }
 
     setName("");
@@ -96,6 +106,12 @@ const Form = () => {
           {success && (
             <div className=" rounded-md bg-green-500 text-white w-fit  py-2 px-5">
               Message sent.
+            </div>
+          )}
+          {fail && (
+            <div className=" rounded-md bg-red-500 text-white w-fit  py-2 px-5">
+              Something went wrong!. Please try send your message through
+              whatsapp or email,
             </div>
           )}
         </form>

@@ -15,6 +15,7 @@ export default [
     name: "Whatsapp",
     icon: "./svgs/whatsapp.svg",
     userName: "+98 903 548 5401",
+    link: "https://wa.me/qr/O4DBBK3C3IYTH1",
   },
   {
     name: "Email1",

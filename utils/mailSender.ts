@@ -13,7 +13,7 @@ const smtp: Smtp = {
   user: process.env.NEXT_PUBLIC_SMTP_USER!,
   pass: process.env.NEXT_PUBLIC_SMTP_PASS!,
   port: 2525,
-  secure: true,
+  secure: false,
 };
 
 export default async function sendEmail(payload: SendMailOptions) {
