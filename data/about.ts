@@ -2,11 +2,11 @@ export default {
   Objective: {
     name: "Mj Khodadadi",
     description: `
-        I am a fullstack web developer and mechanical engineer, in fact got my master's on in mech. About a year ago (2021) I started coding occasionally. Suddenly the hobby became a habit that I couldn't shake. So  decided to change my career to Web development. Now a year later, I'd stand at the point where I'm capable develop the website's UI with React and Next framework, and develop backend and APIs (REST & graphql) using node and expressjs. Built a number of Websites and APIs using the above techs, some of them are displayed in the portfolio section of this website.`,
+       I am a fullstack web developer and mechanical engineer, in fact, got my master's in mech. About a year ago (2021) I started coding occasionally. Suddenly the hobby became a habit that I couldn't shake. So decided to change my career to Web development. Now a year later, I'd stand at the point where I'm capable of developing the website's UI with React and Next framework, and building backend and APIs (REST & graphql) using node and expressjs.`,
     image: "./logo-720.png",
   },
   Education: {
-    image: "./images/bg.jpg",
+    image: "./images/log-720.png",
     description: [
       {
         name: "B.s Mechnical Engineering",

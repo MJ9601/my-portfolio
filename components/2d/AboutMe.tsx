@@ -21,7 +21,7 @@ const AboutMe = () => {
             target={"_blank"}
             className="submit px-4 ring-2 rounded-full py-1 ring-green-500 text-green-500 transition-all ease-linear"
           >
-            Download CV
+            Download Resume
           </a>
         </div>
         <img
